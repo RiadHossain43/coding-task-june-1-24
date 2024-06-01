@@ -7,7 +7,7 @@ interface ContainerProps {
 }
 
 const ContextProvider: React.FC<ContainerProps> = ({ children }) => {
-  let store = useStore({});
-  return <Context.Provider value={undefined}>{children}</Context.Provider>;
+  let store: any = useStore();
+  return <Context.Provider value={store}>{children}</Context.Provider>;
 };
 export default ContextProvider;

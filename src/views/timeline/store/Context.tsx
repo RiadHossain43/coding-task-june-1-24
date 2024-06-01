@@ -15,7 +15,7 @@ interface ContainerProps {
 }
 
 const ContextProvider: React.FC<ContainerProps> = ({ children }) => {
-  let store: TimeLineStore = useStore({});
+  let store: TimeLineStore = useStore();
   return <Context.Provider value={store}>{children}</Context.Provider>;
 };
 export default ContextProvider;
