@@ -4,20 +4,24 @@ import * as commentService from "../../../../../services/commentService";
 import { Comment } from "../../../../../types";
 import { CommentUtils } from "./types";
 export default function useComments({}): CommentUtils {
-  const { handleError } = useAPIResponse();
+  const { handleError, handleSuccess } = useAPIResponse();
   const [comments, setComments] = useState<Comment[]>([]);
   const [isCommentsLoading, setIsCommentsLoading] = useState(false);
-  const listComments = useCallback(async (query: string | "") => {
-    setIsCommentsLoading(true);
-    try {
-      let response = await commentService.listComments(query);
-      setComments(response.data);
-    } catch (err) {
-      handleError(err);
-    } finally {
-      setIsCommentsLoading(false);
-    }
-  }, []);
+  const listComments = useCallback(
+    async (query: string | "") => {
+      setIsCommentsLoading(true);
+      try {
+        let response = await commentService.listComments(query);
+        setComments(response.data);
+        handleSuccess(response);
+      } catch (err) {
+        handleError(err);
+      } finally {
+        setIsCommentsLoading(false);
+      }
+    },
+    [handleError, handleSuccess]
+  );
 
   return {
     comments,

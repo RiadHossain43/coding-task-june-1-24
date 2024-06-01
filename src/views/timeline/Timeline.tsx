@@ -5,7 +5,9 @@ import Posts from "./components/Posts";
 const Timeline: React.FC = (): React.ReactElement => {
   return (
     <TimelineContextProvider>
-      <Posts />
+      <div className="my-20 container mx-auto text-black dark:text-slate-100 bg-slate-200 dark:bg-slate-900">
+        <Posts />
+      </div>
     </TimelineContextProvider>
   );
 };

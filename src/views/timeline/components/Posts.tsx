@@ -4,23 +4,28 @@ import { useTimeline } from "../store";
 import { Post } from "../../../types";
 import { PostContextProvider } from "./store/post";
 import { UserContextProvider } from "./store/user";
-
+import { useAutoAnimate } from "@formkit/auto-animate/react";
+import PostSkeleton from "./PostSkeleton";
 interface Posts {
   posts: [Post];
 }
 const Posts: React.FC = ({}): React.ReactElement => {
   let { postStoreUtils } = useTimeline();
+  const [postsRef] = useAutoAnimate();
   return (
     <React.Fragment>
-      {postStoreUtils.posts.map((post: Post) => {
-        return (
-          <PostContextProvider key={String(post.id)}>
-            <UserContextProvider>
-              <PostUI {...post} />
-            </UserContextProvider>
-          </PostContextProvider>
-        );
-      })}
+      <div ref={postsRef} className="box-border max-w-2xl mx-auto">
+        {postStoreUtils.posts.map((post: Post) => {
+          return (
+            <PostContextProvider key={String(post.id)}>
+              <UserContextProvider>
+                <PostUI {...post} />
+              </UserContextProvider>
+            </PostContextProvider>
+          );
+        })}
+        {postStoreUtils.isPostsLoading && [1, 2].map((_) => <PostSkeleton />)}
+      </div>
     </React.Fragment>
   );
 };

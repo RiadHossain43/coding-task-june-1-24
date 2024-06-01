@@ -23,7 +23,7 @@ export default function useUsers({}): UserUtils {
     } finally {
       setIsUserLoading(false);
     }
-  }, []);
+  }, [handleError]);
 
   return {
     user,

@@ -4,7 +4,7 @@ import useAPIResponse from "../../../hooks/apiResponse";
 import { Post } from "../../../types";
 import { PostStoreUtils } from "./types";
 export default function usePosts(): PostStoreUtils {
-  const { handleError } = useAPIResponse();
+  const { handleError, handleSuccess } = useAPIResponse();
   const [posts, setPosts] = useState<Post[]>([]);
   const [selectedPostId, setSelectedPostId] = useState<number | null>(null);
   const [isPostsLoading, setIsPostsLoading] = useState<boolean>(false);
@@ -19,13 +19,14 @@ export default function usePosts(): PostStoreUtils {
           );
           return [...newposts];
         });
+        handleSuccess(response);
       } catch (err) {
         handleError(err);
       } finally {
         setIsPostsLoading(false);
       }
     },
-    [handleError]
+    [handleError, handleSuccess]
   );
 
   useEffect(() => {
