@@ -6,10 +6,8 @@ import { PostContextProvider } from "./store/post";
 import { UserContextProvider } from "./store/user";
 import { useAutoAnimate } from "@formkit/auto-animate/react";
 import PostSkeleton from "./PostSkeleton";
-interface Posts {
-  posts: [Post];
-}
-const Posts: React.FC = ({}): React.ReactElement => {
+
+const Posts: React.FC = (): React.ReactElement => {
   let { postStoreUtils } = useTimeline();
   const [postsRef] = useAutoAnimate();
   return (
@@ -24,7 +22,8 @@ const Posts: React.FC = ({}): React.ReactElement => {
             </PostContextProvider>
           );
         })}
-        {postStoreUtils.isPostsLoading && [1, 2].map((_) => <PostSkeleton />)}
+        {postStoreUtils.isPostsLoading &&
+          [1, 2].map((_) => <PostSkeleton key={_} />)}
       </div>
     </React.Fragment>
   );

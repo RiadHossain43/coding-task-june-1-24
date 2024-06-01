@@ -3,7 +3,7 @@ import * as userService from "../../../../../services/userService";
 import useAPIResponse from "../../../../../hooks/apiResponse";
 import { User } from "../../../../../types";
 import { UserUtils } from "./types";
-export default function useUsers({}): UserUtils {
+export default function useUsers(): UserUtils {
   const { handleError } = useAPIResponse();
   const [user, setUser] = useState<User | null>(null);
   const [isUserLoading, setIsUserLoading] = useState<boolean>(false);

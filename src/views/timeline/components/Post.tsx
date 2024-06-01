@@ -103,7 +103,7 @@ const PostUI: React.FC<Post> = ({
             return <CommentUI key={String(comment.id)} {...comment} />;
           })}
           {commentUtils.isCommentsLoading &&
-            [1, 2].map((_) => <CommentSkeleton />)}
+            [1, 2].map((_) => <CommentSkeleton key={_} />)}
           <div className="w-full">
             <button
               onClick={() => commentUtils.listComments("postId=" + String(id))}

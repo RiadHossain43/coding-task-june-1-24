@@ -3,7 +3,7 @@ import useAPIResponse from "../../../../../hooks/apiResponse";
 import * as commentService from "../../../../../services/commentService";
 import { Comment } from "../../../../../types";
 import { CommentUtils } from "./types";
-export default function useComments({}): CommentUtils {
+export default function useComments(): CommentUtils {
   const { handleError, handleSuccess } = useAPIResponse();
   const [comments, setComments] = useState<Comment[]>([]);
   const [isCommentsLoading, setIsCommentsLoading] = useState(false);
