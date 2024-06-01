@@ -1,9 +1,9 @@
 import http from "./httpService";
 const apiEndPoint = `/comments`;
 
-export async function listPosts(query: string) {
+export async function listComments(query: string) {
   return http.get(apiEndPoint + "/?" + query);
 }
-export async function getPost(id: number) {
+export async function getComment(id: number) {
   return http.get(apiEndPoint + "/" + id);
 }
