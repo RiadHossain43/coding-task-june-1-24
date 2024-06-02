@@ -18,6 +18,8 @@ I organise the behavioral tests in the tests folders in the directories where th
 
 ## Folder strucure for convenience
 
+
+```
 .
 ├── package.json
 ├── public
@@ -105,5 +107,4 @@ I organise the behavioral tests in the tests folders in the directories where th
 ├── tailwind.config.js
 ├── tsconfig.json
 └── yarn.lock
-
-
+```
