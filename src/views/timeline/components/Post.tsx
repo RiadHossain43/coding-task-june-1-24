@@ -28,9 +28,15 @@ const PostUI: React.FC<Post> = ({
             <Avatar src="https://randomuser.me/api/portraits/men/9.jpg" />
             <div className="flex flex-col">
               <div className="flex items-center">
-                <a className="inline-block text-lg font-bold mr-2" href="/">
+                <a
+                  data-testid={"post-user-name"}
+                  className="inline-block text-lg font-bold mr-2"
+                  href="/"
+                >
                   {userUtils.isUserLoading ? (
-                    <Skeleton width={150} />
+                    <span data-testid={"post-user-skeleton"}>
+                      <Skeleton width={150} />
+                    </span>
                   ) : (
                     <span>{userUtils?.user?.name}</span>
                   )}
@@ -45,9 +51,11 @@ const PostUI: React.FC<Post> = ({
             </div>
           </div>
         </div>
-        <h2 className="text-3xl font-extrabold">{title}</h2>
+        <h2 data-testid={"post-title"} className="text-3xl font-extrabold">
+          {title}
+        </h2>
         <div className="py-4">
-          <p>{body}</p>
+          <p data-testid={"post-body"}>{body}</p>
         </div>
         <div className="py-4">
           <a className="inline-flex items-center" href="/">

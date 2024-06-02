@@ -1,7 +1,9 @@
 import React from "react";
 import Skeleton from "../../../components/Skeleton";
 import AvatarSkeleton from "./AvatarSkeleton";
-const CommentSkeleton: React.FC = ({}): React.ReactElement => {
+const CommentSkeleton: React.FC<{ id?: number }> = ({
+  id,
+}): React.ReactElement => {
   return (
     <React.Fragment>
       <div className="media flex pb-4">

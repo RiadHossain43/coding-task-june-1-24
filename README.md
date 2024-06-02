@@ -6,7 +6,7 @@
 
 I have tried to demostrate my solid understanding of react js application and implement proper best practices as much as I can.
 
-## Folder strucure
+## Folder strucure for convenience
 
 ## The API Integration
 
@@ -16,4 +16,4 @@ API integration and state management has been handled with the help of context A
 
 ## Tests
 
-Simplly run `yarn test` to run the behavioral tests.
+I organise the behavioral tests in the tests folders in the directories where the tests are needed. PLease run `yarn test` to run the behavioral tests.

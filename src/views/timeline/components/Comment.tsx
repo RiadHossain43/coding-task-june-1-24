@@ -10,14 +10,18 @@ const CommentUI: React.FC<Comment> = ({ body, email }): React.ReactElement => {
         </a>
         <div className="media-body">
           <div>
-            <a className="inline-block text-base font-bold mr-2" href="/">
+            <a
+              data-testid={"comment-email"}
+              className="inline-block text-base font-bold mr-2"
+              href="/"
+            >
               {email}
             </a>
             <span className="text-slate-500 dark:text-slate-300">
               3 minutes ago
             </span>
           </div>
-          <p>{body}</p>
+          <p data-testid={"comment-body"}>{body}</p>
           <div className="mt-2 flex items-center">
             <a className="inline-flex items-center py-2 mr-3" href="/">
               <span className="mr-2">
