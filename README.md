@@ -10,11 +10,11 @@ I have tried to demostrate my solid understanding of react js application and im
 
 API integration and state management has been handled with the help of context API. I implemented a similar store pattern like redux but only in react way.
 
-> NOTE: I know there are opportunities for caching mechanism in the task. I still choose to keep things simple. `useQuery` library can be utlised to implment advanced caching mechanism.
+> NOTE: I know there are opportunities for caching mechanism here. I still choose to keep things simple. `useQuery` library can be utlised to implment advanced caching mechanism.
 
 ## Tests
 
-I organise the behavioral tests in the tests folders in the directories where the tests are needed. PLease run `yarn test` to run the behavioral tests.
+I organise the behavioral tests in the tests folders in the directories where the tests are needed. Please run `yarn test` to run the behavioral tests.
 
 ## Folder strucure for convenience
 
