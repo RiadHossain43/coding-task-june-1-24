@@ -23,7 +23,7 @@ const Posts: React.FC = (): React.ReactElement => {
           );
         })}
         {postStoreUtils.isPostsLoading &&
-          [1, 2].map((_) => <PostSkeleton key={_} />)}
+          [1, 2].map((id) => <PostSkeleton key={id} id={id} />)}
       </div>
     </React.Fragment>
   );

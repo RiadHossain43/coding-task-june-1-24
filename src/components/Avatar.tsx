@@ -1,6 +1,6 @@
 import React from "react";
 interface AvatarProps {
-  src: string;
+  src?: string;
 }
 const Avatar: React.FC<AvatarProps> = ({ src }): React.ReactElement => {
   return (

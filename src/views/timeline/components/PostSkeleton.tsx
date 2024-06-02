@@ -3,7 +3,9 @@ import Avatar from "../../../components/Avatar";
 import Skeleton from "../../../components/Skeleton";
 import AvatarSkeleton from "./AvatarSkeleton";
 
-const PostSkeleton: React.FC = (): React.ReactElement => {
+const PostSkeleton: React.FC<{ id?: number }> = ({
+  id,
+}): React.ReactElement => {
   return (
     <React.Fragment>
       <article className="mb-4 break-inside p-6 rounded-xl bg-white dark:bg-slate-800 flex flex-col bg-clip-border">
