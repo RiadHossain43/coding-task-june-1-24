@@ -2,7 +2,7 @@
 
 [react-typescript-june-1-24.vercel.app](https://react-typescript-june-1-24.vercel.app/)
 
-## I only followed raw rect
+## I only followed raw react
 
 I have tried to demostrate my solid understanding of react js application and implement proper best practices as much as I can.
 
